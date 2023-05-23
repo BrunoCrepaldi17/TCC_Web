@@ -1,15 +1,8 @@
 <?php
-
 // conectar no banco de dados
 $conexao = mysqli_connect('127.0.0.1', 'root', '', 'tcc');
-
 // conectar no banco de dados
-
-
-
-
 if (isset($_POST['cadastrar'])) {
-  
 
   // pega dados do formulario
   $nome = $_POST['nome'];
@@ -17,25 +10,21 @@ if (isset($_POST['cadastrar'])) {
   $email = $_POST['email'];
   $foto = $_POST['foto'];
   $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT); // criptografa a senha
-  
+
   if (isset($_POST['enviar'])) {
 
     $diretoria = "uploads/";
-  
-  
-  
-  
     $arquivoLocal = $_FILES['foto']['tmp_name'];
     $arquivoDestino = $diretoria . $_FILES['foto']['name'];
-  
+
     if (move_uploaded_file($arquivoLocal, $arquivoDestino)) {
       echo "Arquivo enviado com sucesso. ";
     } else {
       echo "Erro ao enviar arquivo. ";
     }
   }
-   // Inserir os dados no banco de dados
-   $sql = "INSERT INTO usuario (nome, email, sexo, senha, foto)
+  // Inserir os dados no banco de dados
+  $sql = "INSERT INTO usuario (nome, email, sexo, senha, foto)
    VALUES ('{$nome}', '{$email}', '{$sexo}','{$senha}', '{$foto}')";
   mysqli_query($conexao, $sql);
 
@@ -54,6 +43,7 @@ if (isset($_POST['cadastrar'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <title>Usuario</title>
+  <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
@@ -66,47 +56,33 @@ if (isset($_POST['cadastrar'])) {
         </div>";
     endif;
     ?>
-    <h1>Cadastro de Usuario</h1>
-    <br>
-    <a href="login.php" onclick="return confirm('confirme a ação ?')">
-      <button type="button" class="btn btn-dark">Voltar</button>
-    </a>
-    <br>
-    <br>
-    <form method="post">
-      <div class="form-group">
-      <form method=post enctype="multipart/form-data">
-          Foto:
-          <br>
-          <input type="file" name="foto" id="foto">
-        </form>
-        <br>
+    
+
+    <div class="page">
+      <form method=POST class="formLogin">
+      <h1>Cadastro de Usuario</h1>
+        Foto:
+        <input type="file" name="foto" id="foto">
         <label for="nome">Nome</label>
-        <br>
-        <input name="nome" type="nome" class="form-control" id="nome" aria-describedby="email" placeholder="Seu nome">
-        <br>
+        <input name="nome" type="nome" class="form-control" id="nome" aria-describedby="email" placeholder="Digite seu nome">
         <label for="sexo">sexo</label>
-        <br>
         <select name="sexo" id="sexo" class="form-control" aria-label="Default select example">
           <option selected>Selecione o Sexo</option>
           <option value="M">masculino</option>
           <option value="F">feminino</option>
           <option value="O">outros</option>
         </select>
-        <br>
-        <br>
         <label for="email">Email</label>
-        <br>
-        <input name="email" type="email" class="form-control" id="email" aria-describedby="email" placeholder="Seu email">
-        <br>
+        <input name="email" type="email" class="form-control" id="email" aria-describedby="email" placeholder="Digite seu email">
         <div class="form-group">
           <label for="senha">Senha</label>
-          <br>
-          <input name="senha" type="password" class="form-control" id="senha" placeholder="Senha">
-          <br>
+          <input name="senha" type="password" class="form-control" id="senha" placeholder="Digite sua senha">
           <button name="cadastrar" type="submit" class="btn btn-primary">Cadastrar</button>
+          <a href="login.php" onclick="return confirm('confirme a ação ?')">
+            <button type="button" class="btn btn-dark">Voltar</button></a>
         </div>
-    </form>
+      </form>
+    </div>
 </body>
 
 </html>

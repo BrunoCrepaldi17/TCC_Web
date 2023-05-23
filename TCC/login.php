@@ -63,47 +63,34 @@ if (isset($_POST['entrar'])) {
 
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <title>Tela de Login no Sistema</title>
+  <title>Login de Usuario</title>
+  <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
+  <div class="page">
+    <form method="POST" class="formLogin">
+      <h1>Login</h1>
+      <p>Digite os seus dados de acesso no campo abaixo.</p>
+      <label for="email">E-mail</label>
+      <input name="email" type="email" id="email" placeholder="Digite seu e-mail" autofocus="true" />
+      <label for="password">Senha</label>
+      <input name="senha" type="password" id="senha" placeholder="Digite sua senha" />
+      <a href="esqueceuSenha.php" onclick="return confirm('Esqueceu a senha? clique OK para redefini-la')"> Esqueci minha Senha </a>
+      <button name="entrar" type="submit" class="btn btn-primary">Entrar</button>
+      <br>
+      Crie um usuario em nosso sistema:<br>
+      <a href="cadastroUsuario.php" onclick="return confirm('Quer criar um usuario para acessar o sistema ?')">
+      <button  class="btn btn-danger" type="button">Cadastre-se aqui</button>
+    </form>
+  </div>
 
 </body>
-
-<div class="container">
-
-  <h1>Tela de Login no Sistema</h1>
-
-  <!-- Login Form -->
-  <form method="post">
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input name="email" type="email" class="form-control" id="email" aria-describedby="email" placeholder="Seu email">
-      </label>
-      <br>
-      <label for="senha">Senha</label>
-      <input name="senha" type="password" class="form-control" id="senha" placeholder="Senha">
-      </label>
-      <br>
-      <a href="esqueceuSenha.php" onclick="return confirm('Esqueceu a senha? clique OK para redefini-la')"> Esqueceu a Senha </a>
-      <br>
-      <br>
-      <button name="entrar" type="submit" class="btn btn-primary">Entrar</button>
-      <a href="cadastroUsuario.php" onclick="return confirm('Quer criar um usuario para acessar o sistema ?')">
-        <button type="button" class="btn btn-dark">Cadastrar</button>
-    </div>
-  </form>
-</div>
-</form>
-</div>
-
 </html>
