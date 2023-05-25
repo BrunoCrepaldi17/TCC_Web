@@ -77,7 +77,8 @@ if (isset($_POST['entrar'])) {
 <body>
   <div class="page">
     <form method="POST" class="formLogin">
-      <h1>Login</h1>
+      <img src="imagens/logo_Azul.png" alt="B.C Mechanics" width="400" height="120" class="d-inline-block align-text-top">
+      <h1>Login do Usuario</h1>
       <p>Digite os seus dados de acesso no campo abaixo.</p>
       <label for="email">E-mail</label>
       <input name="email" type="email" id="email" placeholder="Digite seu e-mail" autofocus="true" />
@@ -86,11 +87,12 @@ if (isset($_POST['entrar'])) {
       <a href="esqueceuSenha.php" onclick="return confirm('Esqueceu a senha? clique OK para redefini-la')"> Esqueci minha Senha </a>
       <button name="entrar" type="submit" class="btn btn-primary">Entrar</button>
       <br>
-      Crie um usuario em nosso sistema:<br>
-      <a href="cadastroUsuario.php" onclick="return confirm('Quer criar um usuario para acessar o sistema ?')">
-      <button  class="btn btn-danger" type="button">Cadastre-se aqui</button>
+      <p class="text-body-secondary">Crie um usuario em nosso sistema:
+        <a href="cadastroUsuario.php" onclick="return confirm('Quer criar um usuario para acessar o sistema ?')">
+          <button class="btn btn-danger" type="button">Cadastre-se aqui</button>
+      </p>
     </form>
   </div>
-
 </body>
+
 </html>

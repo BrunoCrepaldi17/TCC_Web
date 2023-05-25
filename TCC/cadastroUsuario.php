@@ -47,7 +47,6 @@ if (isset($_POST['cadastrar'])) {
 </head>
 
 <body>
-  <div class="container">
     <?php
     if (isset($mensagem)) :
       echo "
@@ -56,10 +55,9 @@ if (isset($_POST['cadastrar'])) {
         </div>";
     endif;
     ?>
-    
-
     <div class="page">
       <form method=POST class="formLogin">
+      <img src="imagens/logo_Azul.png" alt="B.C Mechanics" width="400" height="120" class="d-inline-block align-text-top">
       <h1>Cadastro de Usuario</h1>
         Foto:
         <input type="file" name="foto" id="foto">
@@ -84,5 +82,4 @@ if (isset($_POST['cadastrar'])) {
       </form>
     </div>
 </body>
-
 </html>
