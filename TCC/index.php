@@ -15,7 +15,9 @@ require_once('menu.php');
 <body>
 	<div>
     <br><br><br><br>
-		<h2> seja bem vindo: <?php echo $_SESSION['nome']; ?></h2>
+		<h2> seja bem vindo: 
+		<img src="imagens/account.png" width="50" height="50">	
+		<?php echo $_SESSION['nome']; ?></h2>
 		<script>
 			function destroySession() {
 				var xmlhttp = new XMLHttpRequest();

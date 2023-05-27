@@ -19,75 +19,89 @@ if (!isset($_SESSION['nome'])) {
 </head>
 
 <body>
-  <nav class="navbar bg-body-tertiary fixed-top p-2 text-dark-emphasis bg-primary-subtle border border-primary-subtle">
+  <nav positon="fixed" class="navbar navbar-expand-lg bg-body-tertiary fixed-top p-2 text-dark-emphasis bg-primary-subtle border border-primary-subtle">
     <div class="container-fluid">
       <img src="imagens/logo_Azul.png" alt="B.C Mechanics" width="400" height="110" class="d-inline-block align-text-top">
-      <h3 class="">Seja Bem Vindo: <?php echo $_SESSION['nome'] ?></h3>
-      <li class="nav-item dropdown">
-        <h5 class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Opções
-</h5>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Configurações</a></li>
-          <li><a class="dropdown-item" href="logout.php" onclick="return confirm('Voce está prestes a sair do sistema, confirma a ação ?')">Sair do Sistema</a></li>
-        </ul>
-      </li>
+      <div></div>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <img src="imagens/menu.png" width="10" height="10" class="navbar-toggler-icon"></img>
       </button>
       <div class="offcanvas offcanvas-end bg-body-tertiary text-dark-emphasis bg-primary-subtle border border-dark-subtle" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+            <img src="imagens/menu.png" width="30" height="30" class="navbar-toggler-icon"></img>
+            Menu
+          </h5>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <img src="imagens/Logo_Tcc_semFundo.png" alt="B.C Mechanics" width="250" height="250" class="d-inline-block align-text-top">
-        <a class="navbar-brand" href=""></a>
         <div class="container">
           <ul class="navbar-nav mr-auto">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="inicio.php">Inicio</a>
+                <a class="nav-link active" aria-current="page" href="index.php">
+                  <img src="imagens/home.png" width="30" height="30">
+                  Inicio</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="imagens/edit.png" width="30" height="30">
                   Cadastros
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="usuarioCadastrar.php">Usuário</a></li>
-                  <li><a class="dropdown-item" href="grupoUsuarioCadastrar.php">Grupo Usuario</a></li>
-                  <li><a class="dropdown-item" href="produtosCadastrar.php">Produto</a></li>
-                  <li><a class="dropdown-item" href="EstadoCadastrar.php">Estado</a></li>
-                  <li><a class="dropdown-item" href="clienteCadastrar.php">Cliente</a></li>
-                  <li><a class="dropdown-item" href="CatProdutoCadastrar.php">Categoria de Produtos</a></li>
+                  <li><a class="dropdown-item" href="cadastrarCliente.php">Cliente</a></li>
+                  <li><a class="dropdown-item" href="cadastrarFuncionario.php">Funcionario</a></li>
+                  <li><a class="dropdown-item" href="cadastrarVeiculo.php">Veiculo</a></li>
+                  <li><a class="dropdown-item" href="cadastrarProduto.php">Produto</a></li>
+                  <li><a class="dropdown-item" href="cadastrarServico.php">Servico</a></li>
+                  <li><a class="dropdown-item" href="cadastrarOficina.php">Oficina</a></li>
                 </ul>
               </li>
+
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Listagens
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="listagemUsuarios.php">Usuários</a></li>
-                  <li><a class="dropdown-item" href="GrupoUsuariosListar.php">Grupo Usuarios</a></li>
-                  <li><a class="dropdown-item" href="ProdutosListar.php">Produtos</a></li>
-                  <li><a class="dropdown-item" href="ClienteListar.php">Clientes</a></li>
-                  <li><a class="dropdown-item" href="EstadoListar.php">Estado</a></li>
-                  <li><a class="dropdown-item" href="CatProdutoListar.php">Categoria de Produtos</a></li>
-                </ul>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="imagens/automobile-with-wrench.png" width="30" height="30">
                   Ordem de Serviço
                 </a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="imagens/to-do-list.png" width="30" height="30">
+                  Relatórios
+                </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="listagemUsuarios.php">Usuários</a></li>
-                  <li><a class="dropdown-item" href="GrupoUsuariosListar.php">Grupo Usuarios</a></li>
-                  <li><a class="dropdown-item" href="ProdutosListar.php">Produtos</a></li>
-                  <li><a class="dropdown-item" href="ClienteListar.php">Clientes</a></li>
-                  <li><a class="dropdown-item" href="EstadoListar.php">Estado</a></li>
-                  <li><a class="dropdown-item" href="CatProdutoListar.php">Categoria de Produtos</a></li>
+                  <li><a class="dropdown-item" href="ListagemCliente.php">Clientes</a></li>
+                  <li><a class="dropdown-item" href="ListagemFuncionario.php">Funcionarios</a></li>
+                  <li><a class="dropdown-item" href="ListagemVeiculo.php">Veiculos</a></li>
+                  <li><a class="dropdown-item" href="ListagemProduto.php">Produtos</a></li>
+                  <li><a class="dropdown-item" href="ListagemServico.php">Servicos</a></li>
+                  <li><a class="dropdown-item" href="ListagemOficina.php">Oficinas</a></li>
+                  <li><a class="dropdown-item" href="ListagemOrdemServico.php">Ordem de Serviço</a></li>
                 </ul>
+              </li>
             </ul>
-            </li>
+            <div class="dropdown">
+              <div class="container d-inline p-2">
+                <img src="imagens/account.png" width="50" height="50">
+                </div>
+                <h3 class="dropdown-toggle d-inline p-2" data-bs-toggle="dropdown" aria-expanded="false">
+                  <?php echo $_SESSION['nome'] ?>
+                </h3>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="configuracoesUsuario.php" type="button">
+                      <img src="imagens/settings.png" width="15" height="15">
+                      Configurações</a></li>
+                  <li><a class="dropdown-item" href="logout.php" onclick="return confirm('Voce está prestes a sair do sistema, confirma a ação ?')">
+                      <img src="imagens/logout.png" width="15" height="15">
+                      Sair do Sistema</a></li>
+                </ul>
+              </div>
+            </div>
+          </ul>
+
+
         </div>
       </div>
   </nav>
@@ -96,7 +110,6 @@ if (!isset($_SESSION['nome'])) {
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-    </div>
     </div>
   </nav>
 </body>

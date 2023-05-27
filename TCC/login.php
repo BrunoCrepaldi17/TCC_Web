@@ -88,8 +88,8 @@ if (isset($_POST['entrar'])) {
       <button name="entrar" type="submit" class="btn btn-primary">Entrar</button>
       <br>
       <p class="text-body-secondary">Crie um usuario em nosso sistema:
-        <a href="cadastroUsuario.php" onclick="return confirm('Quer criar um usuario para acessar o sistema ?')">
-          <button class="btn btn-danger" type="button">Cadastre-se aqui</button>
+        <a href="cadastrarUsuario.php" onclick="return confirm('Quer criar um usuario para acessar o sistema ?')">
+          <span class="text-body-secondary">Cadastre-se aqui</span>
       </p>
     </form>
   </div>
